@@ -1,0 +1,34 @@
+# Ignore node modules (installed inside the container)
+node_modules/
+npm-debug.log*
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore Next.js build files
+.next/
+.mocks/
+
+# Ignore Cypress and Jest test files
+cypress/
+tests/
+*.test.*
+**/*.test.js
+**/*.test.ts
+coverage/
+
+# Ignore IDE/editor-specific files
+.vscode/
+.prettierignore
+
+# Ignore build artifacts
+dist/
+build/
+
+# Ignore TypeScript cache
+*.tsbuildinfo
+
+# Other unnecessary files
+README.md
+dredd.yml
