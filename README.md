@@ -126,3 +126,10 @@ The API expects all times to be provided in UTC. It does not handle any conversi
 ## Seat Availability
 
 Each table in the restaurant has 4 seats. It is possible for different users to book up to 4 seats at the same table, as long as there are enough seats available for the requested time. For example, if a user books 2 seats at a table, 2 more seats remain available for other users to reserve during that time slot. The system ensures no overbooking by preventing more than 4 seats from being booked for a table.
+
+### Swagger (API documentation)
+
+Swagger is integrated using swagger-jsdoc for generating OpenAPI documentation and swagger-ui-express to serve the UI.
+
+- API Documentation: Automatically generated based on source code.
+- Access: Visit `http://localhost:3000/api-docs` .
