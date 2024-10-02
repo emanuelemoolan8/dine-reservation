@@ -62,11 +62,15 @@ cd dine-reservation-service
 
 ### 3. Environment Variables
 
-Create a `.env` file in the project root and define the necessary environment variables:
-Copy the `.env.example` file to `.env`
-Replace the placeholder values with the actual credentials:
+- Add the .env file in the project root.
+- Copy the contents of .env.example into .env.
+- Replace any placeholder values in .env with the actual credentials.
 
 DATABASE_URL=postgres://<username>:<password>@db:5432/restaurant
+
+or
+
+Replace the .env.example file in the project root with the .env file that contains the actual credentials.
 
 ### 4. Run the application
 
