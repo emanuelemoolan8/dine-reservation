@@ -49,6 +49,16 @@ To build and run the project, you need the following tools installed:
 - PostgreSQL (as the database)
 - Docker & Docker Compose (for local development and deployment)
 
+### Important
+
+To **Build and run the app using Docker**, use the following command:
+
+`npm run docker:up`
+
+After the app is running, you can view the **Swagger documentation** for the API at:
+
+[http://localhost:3000/api-docs](http://localhost:3000/api-docs)
+
 ## Setup Instructions
 
 ### 1. Clone the repository
@@ -106,9 +116,12 @@ To compile the TypeScript code into JavaScript, run the following command:
 
 ### 8. OpenAPI Documentation
 
-You can access the Swagger documentation for the API at `http://localhost:3000/api-docs` once the app is running.
+Swagger is integrated using swagger-jsdoc for generating OpenAPI documentation and swagger-ui-express to serve the UI.
 
-### Docker Setup
+- API Documentation: Automatically generated based on source code.
+- Access: Visit `http://localhost:3000/api-docs` .
+
+### 9. Docker Setup
 
 The project includes a `Dockerfile` for production builds and a `docker-compose.yml` for running the entire stack in Docker.
 
@@ -117,7 +130,7 @@ The project includes a `Dockerfile` for production builds and a `docker-compose.
 
 To build and run the app using Docker, use:
 
-`docker-compose up --build`
+`npm run docker:up`
 
 ## Time Zone Difference
 
@@ -126,10 +139,3 @@ The API expects all times to be provided in UTC. It does not handle any conversi
 ## Seat Availability
 
 Each table in the restaurant has 4 seats. It is possible for different users to book up to 4 seats at the same table, as long as there are enough seats available for the requested time. For example, if a user books 2 seats at a table, 2 more seats remain available for other users to reserve during that time slot. The system ensures no overbooking by preventing more than 4 seats from being booked for a table.
-
-### Swagger (API documentation)
-
-Swagger is integrated using swagger-jsdoc for generating OpenAPI documentation and swagger-ui-express to serve the UI.
-
-- API Documentation: Automatically generated based on source code.
-- Access: Visit `http://localhost:3000/api-docs` .
