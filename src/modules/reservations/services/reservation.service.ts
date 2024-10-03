@@ -130,9 +130,13 @@ const checkSeatsAndSuggestAlternative = (
     ),
     TE.chain(({ nextAvailableTime, availableTables }) => {
       if (nextAvailableTime) {
-        const alternativeMessage = `This table is fully booked. 
-        The next available time for this table is ${nextAvailableTime} (UTC), or you can select another table.
-        Available tables: ${availableTables.join(". ")}`;
+        const alternativeMessage =
+          `This table is fully booked. Try again after ${nextAvailableTime} (UTC).` +
+          (availableTables.length > 0
+            ? ` Or you can select another table. Available tables: ${availableTables.join(
+                ", "
+              )}`
+            : "");
         return TE.left(
           createError({
             ...ErrorConfigs.OVERBOOKING_NOT_ALLOWED,

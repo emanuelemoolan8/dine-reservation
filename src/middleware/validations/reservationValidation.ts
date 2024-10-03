@@ -147,7 +147,7 @@ export const validateReservationTime = (
   const eitherTimeValid =
     time.getUTCHours() < OPENING_HOUR || time.getUTCHours() >= CLOSING_HOUR
       ? E.left(
-          "Invalid reservation time. Reservations are only allowed between 19:00 and 00:00 (UTC equivalent: 15:00 to 22:00)."
+          "Invalid reservation time. Reservations are only allowed between 19:00 and 00:00 (UTC equivalent: 17:00 to 22:00)."
         )
       : E.right(undefined);
 
