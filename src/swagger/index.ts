@@ -2,6 +2,11 @@ import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import { Express } from "express";
 
+const apisPath =
+  process.env.NODE_ENV === "production"
+    ? ["./dist/modules/**/*.js"]
+    : ["./src/modules/**/*.ts"];
+
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -12,7 +17,7 @@ const options = {
     },
     servers: [{ url: "http://localhost:3000/api/v1" }],
   },
-  apis: ["./src/modules/**/*.ts"],
+  apis: apisPath,
 };
 
 const swaggerSpec = swaggerJsDoc(options);

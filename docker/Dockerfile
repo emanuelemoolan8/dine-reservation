@@ -17,6 +17,7 @@ RUN npx prisma generate && npm run build
 FROM node:16-alpine AS final
 
 WORKDIR /app
+ENV NODE_ENV=production
 
 COPY package*.json ./
 RUN npm ci --only=production
