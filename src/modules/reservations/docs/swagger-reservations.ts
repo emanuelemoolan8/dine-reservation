@@ -161,8 +161,7 @@
  *         required: false
  *         schema:
  *           type: integer
- *           example: 5
- *         description: The table number to filter by (optional).
+ *         description: Filter by a specific table number (optional, e.g., 5).
  *     responses:
  *       200:
  *         description: A list of reservations within the specified date range and optional table number.
